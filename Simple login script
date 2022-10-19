@@ -1,0 +1,33 @@
+HASLO = 'masło'
+LOGIN = 'Hann'
+login = ''
+haslo = ''
+haslo_licznik = 0
+login_licznik = 0
+puk = '1234'
+
+print('~' * 30)
+print('Witaj w systemie logowania!')
+while login != LOGIN and login_licznik < 3:
+    login = input('Podaj login: ')
+    if login == LOGIN:
+        print('Login poprawny.')
+    else:
+        print('Login niepoprawny. Spróbuj jeszcze raz.')
+        login_licznik += 1
+        if login_licznik == 3:
+            print('Zbyt dużo prób. Mozliwosc logowania zablokowana.')
+while haslo != HASLO and haslo_licznik < 3:
+    haslo = input('Podaj hasło: ')
+    if haslo == HASLO:
+        print('Zalogowano do systemu!')
+    else:
+        print('Hasło niepoprawne. Spróbuj jeszcze raz.')
+        haslo_licznik += 1
+        if haslo_licznik == 3:
+            print('Zbyt dużo prób logowania. Podaj kod puk.')
+            puk = input('Podaj kod puk: ')
+            if puk == '123':    
+                print('Zalogowano do systemu.')
+            else:
+                print('Kod puk niepoprawny. Logowanie nie powiodło się.')
