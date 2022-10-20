@@ -1,0 +1,34 @@
+PASSWORD = 'butter'
+USER = 'Hann'
+user = ''
+password = ''
+pass_counter = 0
+user_counter = 0
+PUK = '123'
+
+print('~' * 30)
+print('Welcome!\nPlease fill the information below: ')
+print('~' * 30)
+while user != USER and user_counter < 3:
+    user = input('Enter username: ')
+    if user == USER:
+        print('Username correct.')
+    else:
+        print('Username incorrect. Try again.')
+        user_counter += 1
+        if user_counter == 3:
+            print('\nToo many login attempts.\nSystem will be blocked for 20 minutes.')
+while user == USER and password != PASSWORD and pass_counter < 3:
+    password = input('Enter password: ')
+    if password == PASSWORD:
+        print('You have successfully logged in.')
+    else:
+        print('Password incorrect. Try again.')
+        pass_counter += 1
+        if pass_counter == 3:
+            print('Too many login attepmts. Enterr PUK code.')
+            PUK = input('Enter PUK code: ')
+            if PUK == '123':    
+                print('You have successfully logged in.')
+            else:
+                print('PUK code incorrect. Login unsuccesful.')    
